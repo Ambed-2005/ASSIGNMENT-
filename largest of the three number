@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Largest of 3 Numbers</title>
+  <script>
+    function findLargest() {
+      // Get inputs using prompt
+      let a = parseFloat(prompt("Enter first number:"));
+      let b = parseFloat(prompt("Enter second number:"));
+      let c = parseFloat(prompt("Enter third number:"));
+
+      // Check if inputs are valid numbers
+      if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert("Please enter valid numbers.");
+        return;
+      }
+
+      // Function to find the largest
+      function largestOfThree(x, y, z) {
+        if (x >= y && x >= z) {
+          return x;
+        } else if (y >= x && y >= z) {
+          return y;
+        } else {
+          return z;
+        }
+      }
+
+      // Call the function and show result
+      let largest = largestOfThree(a, b, c);
+      alert("The largest number is: " + largest);
+    }
+  </script>
+</head>
+<body>
+  <h2>Click the button to find the largest of 3 numbers</h2>
+  <button onclick="findLargest()">Find Largest</button>
+</body>
+</html>
